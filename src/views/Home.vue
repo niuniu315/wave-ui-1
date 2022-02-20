@@ -5,13 +5,14 @@
       <h1>UI</h1>
       <h2>一个厉害的UI框架</h2>
       <p class="actions">
-        <a href="">GitHub</a>
-        <a href="">开始</a>
+        <a href="https://github.com/niuniu315/niu-ul-1">GitHub</a>
+        <router-link to="/doc">开始</router-link>
       </p>
     </div>
   </div>
 </template>
 
+<!--suppress SpellCheckingInspection -->
 <script lang="ts">
 import Topnav from '../components/Topnav.vue';
 
@@ -29,10 +30,12 @@ export default {
   align-items: center;
   flex-direction: column;
   background: lightgreen;
-  > .actions{
+
+  > .actions {
     padding: 8px 0;
+
     a {
-      margin:0 8px;
+      margin: 0 8px;
       background: #fff;
       display: inline-block;
       $h: 28px;

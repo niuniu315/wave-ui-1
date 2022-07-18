@@ -5,8 +5,6 @@
 </template>
 
 <script lang="ts">
-import {ref} from 'vue';
-
 export default {
   name: 'Switch',
   props: {
@@ -56,6 +54,7 @@ button.checked > span {
 button:focus {
   outline: none;
 }
+
 button:active {
   > span {
     width: $h2 + 4px;

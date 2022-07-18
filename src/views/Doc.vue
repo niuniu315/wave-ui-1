@@ -34,6 +34,7 @@ export default {
   name: 'Doc',
   components: {Topnav},
   setup() {
+    // 用inject获取provide标记的函数asideVisible
     const asideVisible = inject<Ref<boolean>>('asideVisible');
     return {asideVisible};
   }
@@ -64,6 +65,7 @@ export default {
   display: flex;
 
   > aside {
+    border: 1px solid red;
     flex-shrink: 0;
     z-index: 9;
   }

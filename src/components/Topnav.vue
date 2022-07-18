@@ -12,9 +12,12 @@
 <script lang="ts">
 import {inject, Ref} from 'vue';
 
+// asideVisible侧边栏显示
 export default {
   name: 'Topnav',
   setup() {
+    // 用inject获取provide标记的函数asideVisible
+    // 通过点击toggleMenu  asideVisible.value = false Doc组件里asideVisible元素不显示
     const asideVisible = inject<Ref<boolean>>('asideVisible');
     const toggleMenu = () => {
       asideVisible.value = !asideVisible.value;

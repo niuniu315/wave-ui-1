@@ -19,8 +19,8 @@ export default {
   setup() {
     const onClick = () => {
       console.log('hi');
-    }
-    return {onClick}
+    };
+    return {onClick};
   }
 };
 </script>

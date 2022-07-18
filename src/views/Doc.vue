@@ -2,7 +2,7 @@
   <div class="layout">
     <Topnav class="nav"/>
     <div class="content">
-      <aside v-if="menuVisible">
+      <aside v-if="asideVisible">
         <h2>组件列表</h2>
         <ol>
           <li>
@@ -34,8 +34,8 @@ export default {
   name: 'Doc',
   components: {Topnav},
   setup() {
-    const menuVisible = inject<Ref<boolean>>('menuVisible');
-    return {menuVisible};
+    const asideVisible = inject<Ref<boolean>>('asideVisible');
+    return {asideVisible};
   }
 };
 </script>
@@ -65,6 +65,7 @@ export default {
 
   > aside {
     flex-shrink: 0;
+    z-index: 9;
   }
 
   > main {

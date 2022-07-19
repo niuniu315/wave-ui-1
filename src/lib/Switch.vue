@@ -2,6 +2,7 @@
   <button @click="toggle" :class="{checked:value}">
     <span></span>
   </button>
+  <div>{{value}}</div>
 </template>
 
 <script lang="ts">
@@ -12,6 +13,7 @@ export default {
   },
   setup(props, context) {
     const toggle = () => {
+      // (绑定的值，新的值（true）)
       context.emit('update:value', !props.value);
     };
     return {toggle};

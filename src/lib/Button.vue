@@ -1,6 +1,7 @@
 <template>
-  <button class="gulu-button" :class="classes" :disable="disable">
-    <slot/>
+  <button class="gulu-button" :class="classes" :disabled="disabled">
+    <span v-if="loading" class="gulu-loadingIndicator"></span>
+    <slot />
   </button>
 </template>
 
@@ -22,7 +23,11 @@ export default {
       type: String,
       default: 'normal'
     },
-    disable: {
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+    loading: {
       type: Boolean,
       default: false
     }
@@ -79,7 +84,6 @@ $grey: grey;
     outline: none;
   }
 
-  //上面样式在firefox里不能用，需要加上下面这个样式
   &::-moz-focus-inner {
     border: 0;
   }
@@ -89,7 +93,8 @@ $grey: grey;
     box-shadow: none;
     color: $blue;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       color: lighten($blue, 10%);
     }
   }
@@ -99,8 +104,9 @@ $grey: grey;
     box-shadow: none;
     color: inherit;
 
-    &:hover, &:focus {
-      background: darken(white, 5%);;
+    &:hover,
+    &:focus {
+      background: darken(white, 5%);
     }
   }
 
@@ -115,7 +121,7 @@ $grey: grey;
     height: 20px;
     padding: 0 4px;
   }
-//level
+
   &.gulu-theme-button {
     &.gulu-level-main {
       background: $blue;
@@ -172,22 +178,44 @@ $grey: grey;
       }
     }
   }
-  //disable
+
   &.gulu-theme-button {
     &[disabled] {
-      //光标：禁止
       cursor: not-allowed;
       color: $grey;
+
       &:hover {
         border-color: $grey;
       }
     }
   }
+
   &.gulu-theme-link, &.gulu-theme-text {
     &[disabled] {
       cursor: not-allowed;
       color: $grey;
     }
+  }
+
+  > .gulu-loadingIndicator {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    margin-right: 4px;
+    border-radius: 8px;
+    border-color: $blue $blue $blue transparent;
+    border-style: solid;
+    border-width: 2px;
+    animation: gulu-spin 1s infinite linear;
+  }
+}
+
+@keyframes gulu-spin {
+  0% {
+    transform: rotate(0deg)
+  }
+  100% {
+    transform: rotate(360deg)
   }
 }
 </style>

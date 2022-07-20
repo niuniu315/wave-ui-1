@@ -54,6 +54,10 @@
     <Button disabled>默认按钮</Button>
     <Button level="danger" disabled>危险按钮</Button>
   </div>
+  <h1>加载按钮</h1>
+  <div>
+    <Button loading>加载中</Button>
+  </div>
 </template>
 
 <script lang="ts">
@@ -65,6 +69,6 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
 </style>

@@ -1,7 +1,7 @@
 <template>
   <button class="gulu-switch"
           @click="toggle" :class="{'gulu-checked':value}">
-    <span></span>
+    <span class="gulu-switch-span"></span>
   </button>
   <div>{{ value }}</div>
 </template>
@@ -34,7 +34,7 @@ $h2: $h - 4px;
   position: relative;
 }
 
-span {
+.gulu-switch-span {
   position: absolute;
   top: 2px;
   left: 2px;
@@ -49,7 +49,7 @@ button.gulu-checked {
   background: #1890ff;
 }
 
-button.gulu-checked > span {
+button.gulu-checked > .gulu-switch-span {
   left: calc(100% - #{$h2} - 2px);
 }
 

@@ -65,7 +65,6 @@ export default {
   display: flex;
 
   > aside {
-    border: 1px solid red;
     flex-shrink: 0;
     z-index: 9;
   }

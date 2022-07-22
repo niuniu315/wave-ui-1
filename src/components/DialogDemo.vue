@@ -3,7 +3,15 @@
   <h1>示例一</h1>
   <Button @click="toggle">点击显示</Button>
   <Dialog v-model:visible="x" :closeOnClickOverlay="true"
-          :ok="f1" :cancel="f2"></Dialog>
+          :ok="f1" :cancel="f2">
+    <template v-slot:title>
+      <strong>可自定义的标题</strong>
+    </template>
+    <template v-slot:content>
+      <div>自定义内容</div>
+      <div>自定义内容</div>
+    </template>
+  </Dialog>
 </template>
 
 <script lang="ts">

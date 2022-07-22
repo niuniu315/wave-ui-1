@@ -35,7 +35,7 @@ export default {
     },
     closeOnClickOverlay: {
       type: Boolean,
-      default: false
+      default: true
     },
     ok: {
       type: Function
@@ -61,7 +61,7 @@ export default {
       }
     };
     const cancel = () => {
-      context.emit('cancel');
+      props.cancel?.();
       close();
     };
     return {close, onClickOverlay, ok, cancel};
@@ -81,7 +81,6 @@ $border-color: #d9d9d9;
 
   &-overlay {
     position: fixed;
-    border: 1px solid red;
     top: 0;
     left: 0;
     width: 100%;

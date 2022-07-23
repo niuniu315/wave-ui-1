@@ -16,7 +16,7 @@ c-22.4,3-38.4,9.2-47.8,18.3c-11.2,10.9-13.6,26.7-16.3,45c-3.1,20.8-6.6,44.4-25.3
         <router-link to="/doc">文档</router-link>
       </li>
     </ul>
-    <span class="toggleAside" @click="toggleMenu"></span>
+    <span class="toggleAside" @click="toggleMenu" v-if="toggleMenuButtonVisible"></span>
   </div>
 </template>
 
@@ -26,6 +26,12 @@ import {inject, Ref} from 'vue';
 // asideVisible侧边栏显示
 export default {
   name: 'Topnav',
+  props: {
+    toggleMenuButtonVisible: {
+      type: Boolean,
+      default: false
+    }
+  },
   setup() {
     // 用inject获取provide标记的函数asideVisible
     // 通过点击toggleMenu  asideVisible.value = false Doc组件里asideVisible元素不显示

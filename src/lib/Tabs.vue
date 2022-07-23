@@ -1,11 +1,11 @@
 <template>
   <div class="gulu-tabs">
-    <div class="gulu-tabs-nav">
-      <div class="gulu-tabs-nav-item"
-           v-for="(t,index) in titles" :key="index"
+    <div class="gulu-tabs-nav" ref="container">
+      <div class="gulu-tabs-nav-item" v-for="(t,index) in titles" :key="index"
+           :ref="el => { if (t === selected) selectedItem = el }"
            @click="select(t)" :class="{selected: t=== selected}">{{ t }}
       </div>
-      <div class="gulu-tabs-nav-indicator"></div>
+      <div class="gulu-tabs-nav-indicator" ref="indicator"></div>
     </div>
     <div class="gulu-tabs-content">
       <component class="gulu-tabs-content-item"
@@ -17,6 +17,7 @@
 
 <script lang="ts">
 import Tab from './Tab.vue';
+import {onMounted, onUpdated, ref} from 'vue';
 // import {computed} from 'vue';
 
 export default {
@@ -27,6 +28,22 @@ export default {
     }
   },
   setup(props, context) {
+    const selectedItem = ref<HTMLDivElement>(null);
+    const indicator = ref<HTMLDivElement>(null);
+    const container = ref<HTMLDivElement>(null);
+
+    const x = () => {
+      // 返回元素的大小及其相对于视口的位置
+      const {width} = selectedItem.value.getBoundingClientRect();
+      indicator.value.style.width = width + 'px';
+      const {left: left1} = container.value.getBoundingClientRect();
+      const {left: left2} = selectedItem.value.getBoundingClientRect();
+      const left = left2 - left1;
+      indicator.value.style.left = left + 'px';
+    };
+    onMounted(x);
+    onUpdated(x);
+
     const defaults = context.slots.default();
     defaults.forEach((tag) => {
       if (tag.type !== Tab) {
@@ -41,10 +58,12 @@ export default {
     const titles = defaults.map((tag) => {
       return tag.props.title;
     });
+
     const select = (title: string) => {
       context.emit('update:selected', title);
     };
-    return {defaults, titles, select};
+
+    return {defaults, titles, select, selectedItem, indicator, container};
   }
 };
 </script>
@@ -81,6 +100,7 @@ $border-color: #d9d9d9;
       left: 0;
       bottom: -1px;
       width: 100px;
+      transition: all 250ms;
     }
   }
 

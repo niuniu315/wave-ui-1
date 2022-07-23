@@ -54,6 +54,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.router-link-active {
+  text-decoration: underline;
+  color: #1890ff;
+}
+
 .layout {
   display: flex;
   flex-direction: column;
@@ -92,7 +97,6 @@ export default {
 aside {
   background: lightblue;
   width: 150px;
-  padding: 16px;
   position: fixed;
   top: 0;
   left: 0;

@@ -12,8 +12,9 @@ c-22.4,3-38.4,9.2-47.8,18.3c-11.2,10.9-13.6,26.7-16.3,45c-3.1,20.8-6.6,44.4-25.3
 </svg>
     </router-link>
     <ul class="menu">
-      <li>菜单1</li>
-      <li>菜单2</li>
+      <li>
+        <router-link to="/doc">文档</router-link>
+      </li>
     </ul>
     <span class="toggleAside" @click="toggleMenu"></span>
   </div>
@@ -52,6 +53,7 @@ export default {
   > .logo {
     max-width: 6em;
     margin-right: auto;
+    margin-left: 36px;
   }
 
   > .menu {

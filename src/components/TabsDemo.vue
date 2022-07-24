@@ -1,6 +1,6 @@
 <template>
-  <div>Tabs示例
-    <h1>示例一</h1>
+  <div>
+    <h1>Tabs示例</h1>
     <Demo :component="Tabs1"/>
   </div>
 </template>

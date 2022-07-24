@@ -1,6 +1,5 @@
 <demo>常规使用</demo>
 <template>
-  <h1>示例一</h1>
   <Button @click="toggle">点击显示</Button>
   <Dialog v-model:visible="x" :closeOnClickOverlay="true"
           :ok="f1" :cancel="f2">

@@ -66,7 +66,8 @@ export default {
 
   > .nav {
     flex-shrink: 0;
-    background: #1890ff;
+    background: linear-gradient(60deg, rgba(84, 58, 183, 1) 0%, rgba(0, 172, 193, 1) 100%);
+
   }
 
   > .content {
@@ -95,13 +96,15 @@ export default {
 }
 
 aside {
-  background: lightblue;
+  background: red;
+
   width: 150px;
   position: fixed;
   top: 0;
   left: 0;
   padding-top: 70px;
   height: 100%;
+
   > h2 {
     margin-bottom: 4px;
     padding: 0 12px;

@@ -5,7 +5,6 @@
     <Tab title="导航22">内容2</Tab>
     <Tab title="导航333">内容3</Tab>
     <Tab title="导航4444">内容4</Tab>
-    <Tab title="导航55555">内容5</Tab>
   </Tabs>
 </template>
 

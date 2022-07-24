@@ -76,7 +76,7 @@ $border-color: #d9d9d9;
       padding: 8px 0;
       margin: 0 16px;
       cursor: pointer;
-
+white-space: nowrap;
       &:first-child {
         margin-left: 0;
       }

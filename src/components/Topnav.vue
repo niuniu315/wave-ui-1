@@ -60,6 +60,11 @@ export default {
     max-width: 6em;
     margin-right: auto;
     margin-left: 36px;
+    width: 50px;
+    fill: white;
+    padding-right: 15px;
+    display: inline-block;
+    vertical-align: middle;
   }
 
   > .menu {

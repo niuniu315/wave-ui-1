@@ -6,7 +6,7 @@
     <div class="inner-header flex">
       <div class="neirong">
         <div>
-          <h1 class="bolang">波浪UI</h1>
+          <h1 class="titleUl">波浪UI</h1>
           <p class="actions">
             <a href="https://github.com/niuniu315/niu-ul-1">GitHub</a>
             <router-link to="/doc">开始</router-link>
@@ -52,7 +52,7 @@
         </div>
       </div>
     </div>
-    <div>
+    <div style="border: 1px solid red">
       <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
         <defs>
@@ -81,7 +81,96 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.bolang {
+p {
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+
+.header {
+  position: relative;
+  text-align: center;
+  background: linear-gradient(60deg, rgba(84, 58, 183, 1) 0%, rgba(0, 172, 193, 1) 100%);
+  color: white;
+}
+
+
+.inner-header {
+  height: 65vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.flex { /*Flexbox for containers*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.waves {
+  position: relative;
+  width: 100%;
+  height: 15vh;
+  margin-bottom: -7px; /*Fix for safari gap*/
+  min-height: 100px;
+  max-height: 150px;
+}
+
+.content {
+  position: relative;
+  height: 20vh;
+  text-align: center;
+  background-color: white;
+}
+
+/* Animation */
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+  .waves {
+    height: 40px;
+    min-height: 40px;
+  }
+
+  .content {
+    height: 30vh;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+}
+
+.titleUl {
   font-size: 30px;
   font-weight: bold;
   color: #99faff;
@@ -129,13 +218,13 @@ export default {
     top: 100px;
   }
   .introduce{
+    border: 1px solid red;
     width: 100%;
     position: absolute;
     top: 250px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    align-items: center;
     white-space: nowrap;
   }
 }

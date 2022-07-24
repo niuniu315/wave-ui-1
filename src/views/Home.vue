@@ -52,7 +52,7 @@
         </div>
       </div>
     </div>
-    <div style="border: 1px solid red">
+    <div>
       <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
         <defs>
@@ -218,7 +218,6 @@ p {
     top: 100px;
   }
   .introduce{
-    border: 1px solid red;
     width: 100%;
     position: absolute;
     top: 250px;

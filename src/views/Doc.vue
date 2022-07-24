@@ -89,6 +89,7 @@ export default {
     flex-shrink: 0;
     z-index: 9;
     background: rgb(34,125,189);
+
   }
 
   > main {

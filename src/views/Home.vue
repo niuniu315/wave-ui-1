@@ -6,7 +6,7 @@
     <div class="inner-header flex">
       <div class="neirong">
         <div>
-          <h1 class="titleUl">波浪UI</h1>
+          <h1 class="titleUl">Wave UI</h1>
           <p class="actions">
             <a href="https://github.com/niuniu315/niu-ul-1">GitHub</a>
             <router-link to="/doc">开始</router-link>

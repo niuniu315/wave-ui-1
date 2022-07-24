@@ -56,7 +56,9 @@ export default {
 <style lang="scss" scoped>
 .router-link-active {
   text-decoration: underline;
-  color: #1890ff;
+  color: rgb(0, 231, 255);
+  font-weight: bolder;
+  font-size: 24px;
 }
 
 .layout {
@@ -66,7 +68,7 @@ export default {
 
   > .nav {
     flex-shrink: 0;
-    background: linear-gradient(60deg, rgba(84, 58, 183, 1) 0%, rgba(0, 172, 193, 1) 100%);
+    background: rgb(34,125,189);
 
   }
 
@@ -86,6 +88,7 @@ export default {
   > aside {
     flex-shrink: 0;
     z-index: 9;
+    background: rgb(34,125,189);
   }
 
   > main {
@@ -96,7 +99,6 @@ export default {
 }
 
 aside {
-  background: red;
 
   width: 150px;
   position: fixed;

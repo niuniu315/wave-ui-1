@@ -10,7 +10,7 @@
         <Button>查看代码</Button>
       </div>
       <div class="demo-code">
-        <pre>&lt;Switch v-model:value="bool" /&gt;</pre>
+        <pre>{{Switch1.__sourceCode}}</pre>
       </div>
     </div>
   </div>
@@ -26,7 +26,7 @@ export default {
   components: {Switch1, Button},
   setup() {
     const bool = ref(false);
-    return {bool};
+    return {bool,Switch1};
   }
 };
 </script>

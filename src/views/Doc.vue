@@ -102,14 +102,15 @@ aside {
   left: 0;
   padding-top: 70px;
   height: 100%;
-
   > h2 {
     margin-bottom: 4px;
+    padding: 0 12px;
   }
 
   > ol {
+
     > li {
-      padding: 4px 0;
+      padding: 4px 12px;
     }
   }
 

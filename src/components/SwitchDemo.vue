@@ -4,13 +4,13 @@
     <div class="demo">
       <h2>常规用法</h2>
       <div class="demo-component">
-        <Switch1></Switch1>
+        <component is="Switch1"/>
       </div>
       <div class="demo-actions">
         <Button>查看代码</Button>
       </div>
       <div class="demo-code">
-        <pre>{{Switch1.__sourceCode}}</pre>
+        <pre>{{ Switch1.__sourceCode }}</pre>
       </div>
     </div>
   </div>
@@ -23,10 +23,10 @@ import Switch1 from './Demos/Switch1.vue';
 
 export default {
   name: 'SwitchDemo',
-  components: {Switch1, Button},
+  components: {Button},
   setup() {
     const bool = ref(false);
-    return {bool,Switch1};
+    return {bool, Switch1};
   }
 };
 </script>

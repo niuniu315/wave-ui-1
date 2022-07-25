@@ -1,6 +1,6 @@
 {
   "name": "wave-ui-1",
-  "version": "0.0.4",
+  "version": "0.0.7",
   "files": [
     "dist/lib/*"
   ],

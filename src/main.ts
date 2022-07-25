@@ -1,5 +1,4 @@
-import './lib/gulu.scss';
-// @ts-ignore
+import './lib/wave.scss';
 import {createApp} from 'vue';
 import App from './App.vue';
 import './reset.css';

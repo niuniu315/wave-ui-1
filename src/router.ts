@@ -1,5 +1,6 @@
 import Home from './views/Home.vue';
 import Doc from './views/Doc.vue';
+// @ts-ignore
 import {createWebHashHistory, createRouter} from 'vue-router';
 import SwitchDemo from './components/SwitchDemo.vue';
 import ButtonDemo from './components/ButtonDemo.vue';
